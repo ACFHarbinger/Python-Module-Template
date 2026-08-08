@@ -4,7 +4,6 @@ Human-browsable automation suite backing `.git/workflows/agent_sync.yml`,
 kept separate from the dot-prefixed `.git/` directory (which GitHub itself
 reads) so the actual logic is easy to find, read, and edit.
 
-Ported from Visual-Graph-Programming's `git/` automation suite.
 
 | Directory | Purpose |
 | --- | --- |
