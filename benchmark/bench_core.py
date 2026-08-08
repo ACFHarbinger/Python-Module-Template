@@ -1,8 +1,8 @@
-"""Performance benchmarks for python_module_template.core."""
+"""Performance benchmarks for core module."""
 
 import time
 
-from python_module_template import DataProcessor, ProcessorConfig
+from core import DataProcessor, ProcessorConfig
 
 
 def run_benchmark() -> None:

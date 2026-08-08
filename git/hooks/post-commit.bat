@@ -27,7 +27,7 @@ REM check_commit_ref.py imports agent_tools via a relative import, so it must
 REM run as the git.scripts package (cwd at the repo root) rather than as a
 REM bare script.
 pushd "%REPO_ROOT%"
-uv run --project git python -m git.scripts.check_commit_ref --commit-msg-file "%COMMIT_MSG_FILE%"
+uv run python -m git.scripts.check_commit_ref --commit-msg-file "%COMMIT_MSG_FILE%"
 if errorlevel 1 (
   echo post-commit: ticket reference check reported an issue ^(non-blocking^) 1>&2
 )

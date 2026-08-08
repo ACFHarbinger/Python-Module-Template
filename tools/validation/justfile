@@ -1,8 +1,9 @@
-# tools/validation — run C++ format checks.
+# tools/validation — run Python quality checks (linter + typechecker).
 
 set shell := ["bash", "-c"]
 
-all: cpp
+all: python
 
-cpp:
-    find src include test benchmark -name '*.cpp' -o -name '*.hpp' -o -name '*.h' | xargs clang-format --dry-run --Werror
+python:
+    uv run ruff check .
+    uv run mypy src test

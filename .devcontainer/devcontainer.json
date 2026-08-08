@@ -16,7 +16,7 @@
                 "rust-lang.rust-analyzer",
                 "golang.go",
                 "fwcd.kotlin",
-                "ms-vscode.cpptools",
+                "ms-python.python",
                 "ms-azuretools.vscode-docker"
             ],
             "settings": {

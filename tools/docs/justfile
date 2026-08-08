@@ -4,8 +4,8 @@ set shell := ["bash", "-c"]
 
 # Build MkDocs
 build:
-    mkdocs build --config-file docs/mkdocs.yml --strict
+    uv run mkdocs build --config-file docs/mkdocs.yml --strict
 
 # Serve the MkDocs site locally with live reload
 serve:
-    mkdocs serve --config-file docs/mkdocs.yml
+    uv run mkdocs serve --config-file docs/mkdocs.yml

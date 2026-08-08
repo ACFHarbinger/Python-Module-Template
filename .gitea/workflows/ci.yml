@@ -98,11 +98,12 @@ jobs:
       - run: mvn -B test
         working-directory: java
 
-  build-test-cpp:
+  build-test-python:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: |
-          cmake -S cpp -B cpp/build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
-          cmake --build cpp/build --parallel
-      - run: ctest --test-dir cpp/build --output-on-failure
+          uv sync
+          uv run ruff check .
+          uv run mypy src test
+      - run: uv run pytest

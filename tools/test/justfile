@@ -1,8 +1,8 @@
-# tools/test — run C++ test suite.
+# tools/test — run Python test suite.
 
 set shell := ["bash", "-c"]
 
-all: cpp
+all: python
 
-cpp:
-    cmake -S . -B build -DBUILD_TESTING=ON && cmake --build build -j && ctest --test-dir build --output-on-failure
+python:
+    uv run pytest

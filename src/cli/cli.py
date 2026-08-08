@@ -6,8 +6,8 @@ import argparse
 import sys
 from collections.abc import Sequence
 
-from .core import DataProcessor, ProcessorConfig
-from .utils import format_metadata
+from core import DataProcessor, ProcessorConfig
+from utils import format_metadata
 
 
 def main(argv: Sequence[str] | None = None) -> int:

@@ -8,7 +8,7 @@
     { "name": "component:java",         "color": "ED8B00", "description": "java/ module" },
     { "name": "component:rust",         "color": "000000", "description": "rust/ module" },
     { "name": "component:go",           "color": "00ADD8", "description": "go/ module" },
-    { "name": "component:cpp",          "color": "00599C", "description": "cpp/ module" },
+    { "name": "component:python",          "color": "00599C", "description": "Python module" },
     { "name": "component:dev-tools",    "color": "5319E7", "description": "dev/ developer-assistant tool (see docs/moon/roadmaps/developer_tools.md)" },
     { "name": "component:ci-automation","color": "C5DEF5", "description": "GitHub Actions, bots, and repo automation" },
     { "name": "component:docs",         "color": "BFD4F2", "description": "Documentation and ADRs" }

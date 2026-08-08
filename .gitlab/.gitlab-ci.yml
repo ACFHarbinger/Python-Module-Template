@@ -71,15 +71,16 @@ lint-test-java:
     - cd java
     - mvn -B test
 
-build-test-cpp:
+build-test-python:
   stage: test
   image: ubuntu:22.04
   before_script:
     - apt-get update && apt-get install -y cmake g++ make
   script:
-    - cmake -S cpp -B cpp/build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=ON
-    - cmake --build cpp/build --parallel
-    - ctest --test-dir cpp/build --output-on-failure
+    - uv sync
+    - uv run ruff check .
+    - uv run mypy src test
+    - uv run pytest
 
 # ==========================================
 # STAGE: SECURITY (security.yml)

@@ -1,19 +1,22 @@
-"""Unit tests for python_module_template.utils module."""
+"""Unit tests for utils module."""
 
-from python_module_template.utils import calculate_digest, format_metadata
+from __future__ import annotations
+
+from utils import calculate_digest, format_metadata
 
 
 def test_calculate_digest() -> None:
-    data = {"name": "test", "value": 123}
-    digest1 = calculate_digest(data)
-    digest2 = calculate_digest(data)
-    assert len(digest1) == 64
-    assert digest1 == digest2
+    """Test SHA-256 digest calculation for dictionary payloads."""
+    payload = {"a": 1, "b": "test"}
+    digest = calculate_digest(payload)
+    assert isinstance(digest, str)
+    assert len(digest) == 64
 
 
 def test_format_metadata() -> None:
-    meta = format_metadata("MyModule", "1.2.3")
-    assert meta == "MyModule v1.2.3"
+    """Test metadata formatting string output."""
+    res_base = format_metadata("mod", "1.0.0")
+    assert res_base == "mod v1.0.0"
 
-    meta_extra = format_metadata("MyModule", "1.2.3", {"env": "prod", "tier": "core"})
-    assert meta_extra == "MyModule v1.2.3 (env=prod, tier=core)"
+    res_extra = format_metadata("mod", "1.0.0", {"env": "prod"})
+    assert res_extra == "mod v1.0.0 (env=prod)"

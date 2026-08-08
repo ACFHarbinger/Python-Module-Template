@@ -10,7 +10,7 @@ reset := '\033[0m'
 [private]
 _print_header:
     @printf '{{bold}}{{cyan}}Python-Module-Template{{reset}}\n'
-    @printf 'C++ Repository Template (C++17 · CMake · GTest · Google Benchmark)\n\n'
+    @printf 'Python Repository Template (Python 3.11+ · uv · ruff · pytest)\n\n'
 
 # List every recipe across all sub-modules
 help: _print_header

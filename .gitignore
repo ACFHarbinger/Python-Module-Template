@@ -29,3 +29,6 @@ docs/sphinx/_build/
 .idea/
 *.swp
 .DS_Store
+
+# Force include
+!tools/build/

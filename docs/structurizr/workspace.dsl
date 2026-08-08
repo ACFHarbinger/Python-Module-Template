@@ -1,32 +1,26 @@
-/*
- * Python-Module-Template — Structurizr DSL workspace (C4 model)
- *
- * See docs/structurizr/README.md for rendering instructions.
- */
-
-workspace "Python-Module-Template" "C4 model for Python-Module-Template C++ repository." {
+workspace "Python-Module-Template" "C4 model for Python-Module-Template Python repository." {
 
     model {
-        user = person "User" "Interacts with the C++ application."
+        user = person "User" "Interacts with the Python application."
 
-        system = softwareSystem "Python-Module-Template" "C++ repository application." {
-            cli = container "CLI Executable" "Command-line interface." "C++17"
-            lib = container "Core Library" "C++ domain logic." "C++17"
+        system = softwareSystem "Python-Module-Template" "Python repository application." {
+            cli = container "CLI Executable" "Command-line interface." "Python 3.11"
+            lib = container "Core Package" "Python domain logic." "Python 3.11"
         }
 
-        user -> cli "Executes"
-        cli -> lib "Calls"
+        user -> system.cli "Executes CLI commands"
+        system.cli -> system.lib "Uses"
     }
 
     views {
         systemContext system "SystemContext" {
             include *
-            autoLayout
+            autoLayout lr
         }
 
         container system "Containers" {
             include *
-            autoLayout
+            autoLayout lr
         }
 
         theme default

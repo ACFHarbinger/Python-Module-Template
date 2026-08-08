@@ -20,7 +20,7 @@ body:
         - Kotlin (kotlin/)
         - Rust (rust/)
         - Go (go/)
-        - C++ (cpp/)
+        - Python (src/)
         - Build / tooling (just, docker, CI)
         - Other / unknown
     validations:
