@@ -7,7 +7,7 @@ Description: Serverless Backend stack for the Python Module Template.
 
 Resources:
   # DynamoDB Database Table
-  Python_module_templateTable:
+  PythonModuleTemplateTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
       PrimaryKey:
@@ -18,7 +18,7 @@ Resources:
         WriteCapacityUnits: 5
 
   # Lambda Function
-  Python_module_templateFunction:
+  PythonModuleTemplateFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: handler.lambda_handler
@@ -26,10 +26,10 @@ Resources:
       CodeUri: ./src
       Environment:
         Variables:
-          TABLE_NAME: !Ref Python_module_templateTable
+          TABLE_NAME: !Ref PythonModuleTemplateTable
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref Python_module_templateTable
+            TableName: !Ref PythonModuleTemplateTable
       Events:
         ApiEvent:
           Type: Api
