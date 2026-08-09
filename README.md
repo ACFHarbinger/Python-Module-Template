@@ -52,3 +52,12 @@ just docs      # Serve live local documentation portal
 
 - **Open Source (Free)**: GNU AGPL-3.0. See [LICENSE](LICENSE) (Section A).
 - **Commercial (Paid)**: Enterprise licensing options available. See [LICENSE](LICENSE) (Section B).
+
+## Infrastructure layout
+
+Optional deploy and edge configs live under [`infra/`](infra/README.md):
+
+- `infra/global/` — external deploy/host tooling
+- `infra/cloud/` — managed cloud host configs
+- `infra/private/` — developer-only tooling
+- `infra/server/` — nginx and Envoy reverse-proxy configs
